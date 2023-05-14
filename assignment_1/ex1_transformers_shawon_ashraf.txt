@@ -1,0 +1,8 @@
+1. Average accuracy was 0.4. First I took the mean accuracy for each selected object for the prompts in the list and then took the overall mean. 
+
+2. Totally wrong predictions: Ketchup, Light Bulbs, Asparagus, Sea Turtles, Flashlights. As for other wrong results, such as Ambulance, Giraffe, Canoes, Limousine, Jeans etc. 
+can have multiple colors.
+
+3. Objects can variations in their colors and patterns of these colors. Some can have only a single color some can have multiple. As it is evident from the analysis that even 
+single colors are diffiult to predict from just natural language. Perhaps this can be improved with complex prompt patterns but coming up with all possible patterns to 
+capture color knowledge from text or language alone is infeasible.
