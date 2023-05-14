@@ -1,0 +1,58 @@
+ #1.1
+
+ (1) BERT and RoBERTa are bi-directional encoder models, which are suitable for masked word prediction and next sentence prediction. Since they use bi-directional encoders, 
+ the approach makes them less suitable for text generation as their bi-directional design lets them peek into future tokens in a sequence, effectively limiting the space of 
+ potential tokens to sample from. GPT-2, 3 on the other hand, are decoder only models and are suitable for text generation by design. 
+
+
+ (2) BERT provides contextual word embeddings, so we can create a contrastive learning objective where embeddings from BERT for a context sentence and the corresponding gloss
+ are compared. On paper using this new objective, we can fine tune BERT on a corpus designed for WSD. 
+
+ (3)
+ (a)
+ Query: Input to the model or what information we are looking for. 
+ Key: Information which is available in the text and will be queries based on the input "query".
+ Value: Likelihood of a Key corresponding to a Query. 
+
+(b)
+Encoder creates the contextualised embeddings from attention ouptputs and the Decoder uses the information from Encoder to generate new tokens for a sequence. In other words,
+Encoder creates the intermediate representation from text which the Decoder can use as input.
+
+
+(c)
+Attention mechanism can be thought of as filters which retreive information from a specific part of text input. However, unlike previous approaches, which required to 
+define the size of the filter (CNN) or specific word windows, the whole input sequence can be filtered simultaneously. 
+
+
+(d)
+Self attention  can compare each token in a sequence against all the other tokens in the sequence. As a result, the self attention mechanism does not need explicit inputs on
+which tokens need to be looked at or attended.
+
+
+
+
+
+# 1.2 
+(1)
+
+(a) 
+q3 = [11.,  5.,  6.,  7.]
+
+
+k1 = [0., 8., 0., 2.]
+k2 = [6., 7., 2., 6.]
+k3 = [6., 9., 1., 8.]
+
+v1 = [4.0, 2.0, 2.0, 2.0]
+v2 = [5.0, 4.0, 6.0, 8.0]
+v3 = [8.0, 6.0, 5.0, 9.0]
+
+(b)
+a3j = [1.443526401553823e-26, 0.00012339458044152707, 0.9998766183853149]
+
+(c)
+[7.999629974365234, 5.999753475189209, 5.000123500823975, 8.999876976013184]
+
+***
+The matrix multiplications were done using pytorch.
+
